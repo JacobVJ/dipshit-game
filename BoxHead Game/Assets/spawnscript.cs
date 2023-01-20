@@ -21,7 +21,10 @@ public class spawnscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < 10; i++)
+        {
 
-        newEnemy.transform.position = Vector3.MoveTowards(newEnemy.transform.position, transform.GetChild(0).position, Time.deltaTime*1);
+            zombie[i].transform.position = Vector3.MoveTowards(zombie[i].transform.position, transform.GetChild(0).position, Time.deltaTime * 1);
+        }
     }
 }
