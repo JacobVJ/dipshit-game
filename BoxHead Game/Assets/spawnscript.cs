@@ -14,7 +14,7 @@ public class spawnscript : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(1);
-            newEnemy = Instantiate(enemy,transform.position+new Vector3(Random.insideUnitCircle.x*20,0, Random.insideUnitCircle.y*20), Quaternion.identity);
+            newEnemy = Instantiate(enemy, transform.position + new Vector3(Random.insideUnitCircle.x * 20, 0.3f, Random.insideUnitCircle.y * 20), Quaternion.identity);
             zombie.Add(newEnemy);
         } 
     }
@@ -26,7 +26,7 @@ public class spawnscript : MonoBehaviour
             print(zombie.Contains(zombie[i]));
             if (zombie.Contains(zombie[i]))
             {
-                zombie[i].transform.position = Vector3.MoveTowards(zombie[i].transform.position, transform.GetChild(0).position + new Vector3(Random.insideUnitCircle.x * 2, 0, Random.insideUnitCircle.y * 20), Time.deltaTime * 3);
+                zombie[i].transform.position = Vector3.MoveTowards(zombie[i].transform.position, transform.GetChild(0).position + new Vector3(Random.insideUnitCircle.x * 2, 0.3f, Random.insideUnitCircle.y * 20), Time.deltaTime * 3);
                 
             }
         }
@@ -41,11 +41,11 @@ public class spawnscript : MonoBehaviour
         hunter.Add(zombieObject);
         zombie.Remove(zombieObject);
     }
-    
-    public void PlayerHealthChange(GameObject )
+    public void DeleteHunter(GameObject Hunterobject)
     {
-
+        hunter.Remove(Hunterobject);
     }
+
 
     void boxspawn()
     {

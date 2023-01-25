@@ -10,11 +10,11 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             playerHealth = playerHealth - 10;
-        }
-        if (playerHealth == 0)
-        {
-            Destroy(gameObject);
-        }
+            if (playerHealth == 0)
+            {
+                Destroy(gameObject);
+            }
+        }       
     }
-
+    
 }
