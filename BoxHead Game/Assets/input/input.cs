@@ -7,7 +7,7 @@ public class input : MonoBehaviour
 {
     private Rigidbody rb;
     Vector3 movemenVector;
-    public float speed = 3;
+    public float speed = 5;
     public spawnscript spawnscript;
     void Start()
     {
@@ -31,6 +31,13 @@ public class input : MonoBehaviour
             transform.forward = movemenVector;
         }      
     }
+
+
+
+
+    int[] VåbenSkade = new int[] {72, 32, 156, 400 };
+    string[] VåbenNavn = new string[] {"pistol","UZI", "Shotgun", "Sniper"};
+   
     void ShootingRayCast()
     {
         Vector3 PlayerPosition = transform.position;
@@ -49,10 +56,7 @@ public class input : MonoBehaviour
             }
         }
 
-
     }
-
-
 
     //                spawnscript.DeleteHunter(enemy);
 

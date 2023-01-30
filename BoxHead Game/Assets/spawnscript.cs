@@ -7,7 +7,6 @@ public class spawnscript : MonoBehaviour
     GameObject newEnemy;
     List<GameObject> zombie = new List<GameObject>();
     List<GameObject> hunter = new List<GameObject>();
-    int PlayerHealth = 100;
     // Start is called before the first frame update
     IEnumerator Start()
     {     
@@ -25,10 +24,7 @@ public class spawnscript : MonoBehaviour
         {
             print(zombie.Contains(zombie[i]));
             if (zombie.Contains(zombie[i]))
-            {
-                zombie[i].transform.position = Vector3.MoveTowards(zombie[i].transform.position, transform.GetChild(0).position + new Vector3(Random.insideUnitCircle.x * 2, 0.3f, Random.insideUnitCircle.y * 20), Time.deltaTime * 3);
-                
-            }
+            {   zombie[i].transform.position = Vector3.MoveTowards(zombie[i].transform.position, transform.GetChild(0).position + new Vector3(Random.insideUnitCircle.x * 2, 0.3f, Random.insideUnitCircle.y * 20), Time.deltaTime * 3);    }
         }
     }
 
@@ -38,9 +34,7 @@ public class spawnscript : MonoBehaviour
         zombie.Remove(zombieObject);
     }
     public void DeleteHunter(GameObject Hunterobject)
-    {
-        hunter.Remove(Hunterobject);
-    }
+    {   hunter.Remove(Hunterobject);    }
 
 
     void boxspawn()
