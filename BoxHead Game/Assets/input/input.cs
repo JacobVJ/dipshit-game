@@ -45,12 +45,15 @@ public class input : MonoBehaviour
             GameObject enemy = interactHit.transform.gameObject;
             if (enemy.CompareTag("Enemy"))
             {
-                spawnscript.DeleteHunter(enemy);
-                Destroy(enemy); 
+                enemy.GetComponent<ZombiScipt>().TakeDamage(72);
             }
         }
 
 
     }
+
+
+
+    //                spawnscript.DeleteHunter(enemy);
 
 }

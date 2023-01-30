@@ -30,15 +30,11 @@ public class spawnscript : MonoBehaviour
                 
             }
         }
-        for(int i = 0; i < hunter.Count; i++)
-        {
-            hunter[i].transform.position = Vector3.MoveTowards(hunter[i].transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime * 3);
-        }
     }
 
     public void ChangeZombieToHunter(GameObject zombieObject)
     {
-        hunter.Add(zombieObject);
+        zombieObject.GetComponent<ZombiScipt>().hunt=true;
         zombie.Remove(zombieObject);
     }
     public void DeleteHunter(GameObject Hunterobject)
