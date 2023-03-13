@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6978307028024171139}
   - component: {fileID: 2258107086268539423}
   - component: {fileID: 771901334434505211}
-  - component: {fileID: 2641217825386493903}
+  - component: {fileID: 7508409212123414157}
+  - component: {fileID: 3241283839612156678}
   m_Layer: 0
   m_Name: PickUpBox
   m_TagString: Untagged
@@ -84,7 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2641217825386493903
+--- !u!114 &7508409212123414157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454143502109131146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e693046ac6a72640a433dae05ac9416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputscript: {fileID: 0}
+--- !u!65 &3241283839612156678
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

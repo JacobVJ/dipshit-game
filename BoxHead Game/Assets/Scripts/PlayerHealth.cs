@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    int playerHealth = 100;
-    int pushingForce = 300;
+    public int playerHealth = 100;
+    int pushingForce = 150;
     // når player collider med et andet gameobject
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         //kører koden hvis gameobject er tagget med Enemy
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             //the rigidbody of your object
             Rigidbody rb = GetComponent<Rigidbody>();
@@ -22,7 +23,12 @@ public class PlayerHealth : MonoBehaviour
             playerHealth = playerHealth - 10;
             // hvis PlayerHealth <= 0 fjern player
             if (playerHealth <= 0)
-            {   Destroy(gameObject);    }
-        }       
-    }   
+            {
+                SceneManager.LoadScene("temp");
+                // Når playeren dør skiftes scenen til menu scenen, i dette tilfælde "temp" scenen
+                // når ny scenen skal addes, gå ind i scene, create new scene, i inspector klik på files, build settings, add open scenens, drag new scene til build
+
+            }
+        }   
+    }
 }
